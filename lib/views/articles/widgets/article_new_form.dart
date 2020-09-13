@@ -17,6 +17,7 @@ class ArticlesNewForm extends StatelessWidget {
         children: <Widget>[
           ArticlesNewFormTitle(),
           ArticlesNewFormContent(),
+          ArticlesNewFormSubmit(),
         ],
       ),
     );
@@ -33,4 +34,14 @@ class ArticlesNewForm extends StatelessWidget {
     }
   }
   // /submit
+}
+
+class ArticlesNewFormSubmit extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+      onPressed: null,
+      child: Text('保存'),
+    );
+  }
 }

@@ -6,7 +6,7 @@ class ArticlesNewFormTitle extends StatelessWidget {
     return TextFormField(
       decoration: const InputDecoration(
         hintText: '記事のタイトルを入力',
-        labelText: 'タイxトル',
+        labelText: 'タイトル',
       ),
     );
   }
