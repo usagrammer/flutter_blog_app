@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:blog_app/routes/constants.dart';
+
 import '../show.dart';
 
 class ArticlesIndexArticle extends StatelessWidget {
@@ -20,11 +22,8 @@ class ArticlesIndexArticle extends StatelessWidget {
               IconButton(
                 icon: Icon(Icons.watch),
                 onPressed: () async {
-                  await Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) {
-                      return ArticlesShow();
-                    },
-                  ));
+                  await Navigator.of(context)
+                      .pushNamed(articlesShowRoute + "?1");
                 },
               ),
             ],

@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:blog_app/routes/screen_arguments.dart';
 
 class ArticlesShow extends StatelessWidget {
+  final Map params;
+  ArticlesShow(this.params);
+
   @override
   Widget build(BuildContext context) {
+    // final ScreenArguments args = ModalRoute.of(context).settings.arguments;
+
+    print("params:$params");
+
     return Scaffold(
       appBar: AppBar(
         // leading: 左端

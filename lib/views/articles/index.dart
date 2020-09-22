@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:blog_app/routes/constants.dart';
+
 import 'new.dart';
 import 'show.dart';
 
@@ -23,11 +25,7 @@ class ArticlesIndex extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.people),
             onPressed: () async {
-              await Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) {
-                  return UsersRegistrationsNew();
-                }),
-              );
+              await Navigator.of(context).pushNamed(usersRegistrationsNewRoute);
             },
           ),
         ],
@@ -42,11 +40,7 @@ class ArticlesIndex extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           // 投稿画面に遷移
-          await Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) {
-              return ArticlesNew();
-            }),
-          );
+          await Navigator.of(context).pushNamed(articlesNewRoute);
         },
         tooltip: 'ホバーすると出る文字',
         child: Icon(Icons.add),
