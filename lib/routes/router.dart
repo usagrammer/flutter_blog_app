@@ -8,6 +8,8 @@ import 'package:blog_app/views/articles/index.dart';
 import 'package:blog_app/views/articles/new.dart';
 import 'package:blog_app/views/articles/show.dart';
 
+import 'package:blog_app/views/comments/show.dart';
+
 import 'package:blog_app/views/users/registrations/new.dart';
 
 class Router {
@@ -40,6 +42,8 @@ class Router {
         return returnRoute(page: ArticlesNew(params));
       case articlesShowRoute:
         return returnRoute(page: ArticlesShow(params));
+      case commentsShowRoute:
+        return returnRoute(page: CommentsShow(params));
       // User
       case usersRegistrationsNewRoute:
         return returnRoute(page: UsersRegistrationsNew());

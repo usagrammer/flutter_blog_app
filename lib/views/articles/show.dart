@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:blog_app/routes/screen_arguments.dart';
+
+import 'package:blog_app/routes/constants.dart';
+import 'package:blog_app/routes/convert.dart';
 
 class ArticlesShow extends StatelessWidget {
   final Map params;
@@ -32,9 +34,10 @@ class ArticlesShow extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           // 投稿画面に遷移
-          await Navigator.of(context).pop();
+          await Navigator.of(context)
+              .pushNamed(routePrefix(patterns: commentsShowRoute, ids: [1, 2]));
         },
-        tooltip: 'ホバーすると出る文字',
+        tooltip: 'コメントページへ',
         child: Icon(Icons.add),
       ),
     );
