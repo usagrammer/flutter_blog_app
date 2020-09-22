@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:inflection2/inflection2.dart';
 
+// Railsでいうパスパラメータ（params[:id]）を実現する
 Map analyzeRouteUrl(path) {
   List<String> paths = path.split('/');
   paths = paths.where((path) => path != "").toList();
@@ -21,6 +22,7 @@ Map analyzeRouteUrl(path) {
   return {"path": convertedPath, "parameters": parameters};
 }
 
+// Railsでいうルーティングのプレフィックスを実現する
 String routePrefix({String patterns, List ids = const []}) {
   List<String> paths = patterns.split('/');
   paths = paths.where((path) => path != "").toList();
