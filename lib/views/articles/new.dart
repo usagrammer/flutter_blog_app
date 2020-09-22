@@ -5,6 +5,9 @@ import 'index.dart';
 import 'widgets/article_new_form.dart';
 
 class ArticlesNew extends StatelessWidget {
+  final Map params;
+  ArticlesNew(this.params);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -8,7 +8,6 @@ class ArticlesShow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final ScreenArguments args = ModalRoute.of(context).settings.arguments;
-
     print("params:$params");
 
     return Scaffold(
@@ -18,7 +17,7 @@ class ArticlesShow extends StatelessWidget {
           icon: Icon(Icons.menu),
           onPressed: () => {},
         ),
-        title: Text("ArticlesShow"),
+        title: Text("ArticlesShow[id:${this.params['article_id']}]"),
         actions: <Widget>[
           // 右端のアイコンたち
           IconButton(

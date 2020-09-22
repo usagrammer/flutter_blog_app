@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
+import 'convert.dart';
 import 'package:blog_app/routes/screen_arguments.dart';
 
 import 'package:blog_app/views/articles/index.dart';
@@ -12,25 +13,13 @@ import 'package:blog_app/views/users/registrations/new.dart';
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     var path = settings.name;
-    var paths = settings.name.split('?');
-    var args = {"hoge": "222"};
-    print("ーーーURL解析ーーー");
-    print("URL:${settings.name}");
-    print("paths:$paths");
+    var params = {};
 
-    print("path[0]:${paths[0]}");
-
-    // var queryParameters = Uri.splitQueryString(paths[1]);
-    // print("queryParameters:$queryParameters");
-
-    dynamic buildParameters() {
-      print("path has parameters");
-      path = paths[0];
-      print("changedPath:$path");
+    if (path.contains(":")) {
+      Map analyzedResults = analyzeRouteUrl(path);
+      path = analyzedResults["path"];
+      params = analyzedResults["parameters"];
     }
-
-    if (paths.length > 1) buildParameters();
-    print("ーーーURL解析ここまでーーー");
 
     dynamic returnRoute({page}) {
       return MaterialPageRoute(
@@ -39,16 +28,18 @@ class Router {
       );
     }
 
+    print("route_path:$path");
+    print("route_params:$params");
     switch (path) {
       case homeRoute:
-        return returnRoute(page: ArticlesIndex());
+        return returnRoute(page: ArticlesIndex(params));
       // Articles
       case articlesIndexRoute:
-        return returnRoute(page: ArticlesIndex());
+        return returnRoute(page: ArticlesIndex(params));
       case articlesNewRoute:
-        return returnRoute(page: ArticlesNew());
+        return returnRoute(page: ArticlesNew(params));
       case articlesShowRoute:
-        return returnRoute(page: ArticlesShow(args));
+        return returnRoute(page: ArticlesShow(params));
       // User
       case usersRegistrationsNewRoute:
         return returnRoute(page: UsersRegistrationsNew());

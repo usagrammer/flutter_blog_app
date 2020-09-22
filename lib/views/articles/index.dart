@@ -10,6 +10,9 @@ import 'widgets/articles_index_article.dart';
 import 'package:blog_app/views/users/registrations/new.dart';
 
 class ArticlesIndex extends StatelessWidget {
+  final Map params;
+  ArticlesIndex(this.params);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

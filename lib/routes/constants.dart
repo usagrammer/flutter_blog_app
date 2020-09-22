@@ -2,6 +2,7 @@
 const String homeRoute = '/';
 const String articlesIndexRoute = '/articles';
 const String articlesNewRoute = '/articles/new';
-const String articlesShowRoute = '/articles/show';
+const String articlesShowRoute = '/articles/:';
+// const String articlesShowRoute = '/articles/:param/comments/:param';
 
 const String usersRegistrationsNewRoute = '/users/registrations/new';
