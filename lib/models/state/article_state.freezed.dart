@@ -17,9 +17,10 @@ class _$ArticleStateTearOff {
 
 // ignore: unused_element
   _ArticleState call(
-      {int id = 1,
+      {int id = -1,
       String title = 'ほげほげたいとる',
       String content = '',
+      dynamic image = '',
       int category_id = 1,
       int release_range = 0,
       String release_date = '',
@@ -29,6 +30,7 @@ class _$ArticleStateTearOff {
       id: id,
       title: title,
       content: content,
+      image: image,
       category_id: category_id,
       release_range: release_range,
       release_date: release_date,
@@ -45,6 +47,7 @@ mixin _$ArticleState {
   int get id;
   String get title;
   String get content;
+  dynamic get image;
   int get category_id;
   int get release_range;
   String get release_date;
@@ -63,6 +66,7 @@ abstract class $ArticleStateCopyWith<$Res> {
       {int id,
       String title,
       String content,
+      dynamic image,
       int category_id,
       int release_range,
       String release_date,
@@ -82,6 +86,7 @@ class _$ArticleStateCopyWithImpl<$Res> implements $ArticleStateCopyWith<$Res> {
     Object id = freezed,
     Object title = freezed,
     Object content = freezed,
+    Object image = freezed,
     Object category_id = freezed,
     Object release_range = freezed,
     Object release_date = freezed,
@@ -92,6 +97,7 @@ class _$ArticleStateCopyWithImpl<$Res> implements $ArticleStateCopyWith<$Res> {
       id: id == freezed ? _value.id : id as int,
       title: title == freezed ? _value.title : title as String,
       content: content == freezed ? _value.content : content as String,
+      image: image == freezed ? _value.image : image as dynamic,
       category_id:
           category_id == freezed ? _value.category_id : category_id as int,
       release_range: release_range == freezed
@@ -117,6 +123,7 @@ abstract class _$ArticleStateCopyWith<$Res>
       {int id,
       String title,
       String content,
+      dynamic image,
       int category_id,
       int release_range,
       String release_date,
@@ -138,6 +145,7 @@ class __$ArticleStateCopyWithImpl<$Res> extends _$ArticleStateCopyWithImpl<$Res>
     Object id = freezed,
     Object title = freezed,
     Object content = freezed,
+    Object image = freezed,
     Object category_id = freezed,
     Object release_range = freezed,
     Object release_date = freezed,
@@ -148,6 +156,7 @@ class __$ArticleStateCopyWithImpl<$Res> extends _$ArticleStateCopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as int,
       title: title == freezed ? _value.title : title as String,
       content: content == freezed ? _value.content : content as String,
+      image: image == freezed ? _value.image : image as dynamic,
       category_id:
           category_id == freezed ? _value.category_id : category_id as int,
       release_range: release_range == freezed
@@ -166,9 +175,10 @@ class __$ArticleStateCopyWithImpl<$Res> extends _$ArticleStateCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ArticleState with DiagnosticableTreeMixin implements _ArticleState {
   _$_ArticleState(
-      {this.id = 1,
+      {this.id = -1,
       this.title = 'ほげほげたいとる',
       this.content = '',
+      this.image = '',
       this.category_id = 1,
       this.release_range = 0,
       this.release_date = '',
@@ -177,6 +187,7 @@ class _$_ArticleState with DiagnosticableTreeMixin implements _ArticleState {
       : assert(id != null),
         assert(title != null),
         assert(content != null),
+        assert(image != null),
         assert(category_id != null),
         assert(release_range != null),
         assert(release_date != null),
@@ -186,7 +197,7 @@ class _$_ArticleState with DiagnosticableTreeMixin implements _ArticleState {
   factory _$_ArticleState.fromJson(Map<String, dynamic> json) =>
       _$_$_ArticleStateFromJson(json);
 
-  @JsonKey(defaultValue: 1)
+  @JsonKey(defaultValue: -1)
   @override
   final int id;
   @JsonKey(defaultValue: 'ほげほげたいとる')
@@ -195,6 +206,9 @@ class _$_ArticleState with DiagnosticableTreeMixin implements _ArticleState {
   @JsonKey(defaultValue: '')
   @override
   final String content;
+  @JsonKey(defaultValue: '')
+  @override
+  final dynamic image;
   @JsonKey(defaultValue: 1)
   @override
   final int category_id;
@@ -213,7 +227,7 @@ class _$_ArticleState with DiagnosticableTreeMixin implements _ArticleState {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ArticleState(id: $id, title: $title, content: $content, category_id: $category_id, release_range: $release_range, release_date: $release_date, created_at: $created_at, update_at: $update_at)';
+    return 'ArticleState(id: $id, title: $title, content: $content, image: $image, category_id: $category_id, release_range: $release_range, release_date: $release_date, created_at: $created_at, update_at: $update_at)';
   }
 
   @override
@@ -224,6 +238,7 @@ class _$_ArticleState with DiagnosticableTreeMixin implements _ArticleState {
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('content', content))
+      ..add(DiagnosticsProperty('image', image))
       ..add(DiagnosticsProperty('category_id', category_id))
       ..add(DiagnosticsProperty('release_range', release_range))
       ..add(DiagnosticsProperty('release_date', release_date))
@@ -242,6 +257,8 @@ class _$_ArticleState with DiagnosticableTreeMixin implements _ArticleState {
             (identical(other.content, content) ||
                 const DeepCollectionEquality()
                     .equals(other.content, content)) &&
+            (identical(other.image, image) ||
+                const DeepCollectionEquality().equals(other.image, image)) &&
             (identical(other.category_id, category_id) ||
                 const DeepCollectionEquality()
                     .equals(other.category_id, category_id)) &&
@@ -265,6 +282,7 @@ class _$_ArticleState with DiagnosticableTreeMixin implements _ArticleState {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(content) ^
+      const DeepCollectionEquality().hash(image) ^
       const DeepCollectionEquality().hash(category_id) ^
       const DeepCollectionEquality().hash(release_range) ^
       const DeepCollectionEquality().hash(release_date) ^
@@ -286,6 +304,7 @@ abstract class _ArticleState implements ArticleState {
       {int id,
       String title,
       String content,
+      dynamic image,
       int category_id,
       int release_range,
       String release_date,
@@ -301,6 +320,8 @@ abstract class _ArticleState implements ArticleState {
   String get title;
   @override
   String get content;
+  @override
+  dynamic get image;
   @override
   int get category_id;
   @override

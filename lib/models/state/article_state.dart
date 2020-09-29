@@ -9,9 +9,10 @@ part 'article_state.g.dart';
 @freezed
 abstract class ArticleState with _$ArticleState {
   factory ArticleState({
-    @Default(1) int id,
+    @Default(-1) int id,
     @Default("ほげほげたいとる") String title,
     @Default("") String content,
+    @Default("") dynamic image,
     @Default(1) int category_id,
     @Default(0) int release_range,
     @Default("") String release_date,

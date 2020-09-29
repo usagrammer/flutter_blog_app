@@ -5,6 +5,7 @@ import 'package:state_notifier/state_notifier.dart';
 
 import 'articles_new_form_title.dart';
 import 'articles_new_form_content.dart';
+import 'articles_new_form_images.dart';
 
 import 'package:blog_app/models/controllers/articles/articles_new_controller.dart';
 
@@ -26,6 +27,7 @@ class ArticlesNewForm extends ConsumerWidget {
           children: <Widget>[
             ArticlesNewFormTitle(),
             ArticlesNewFormContent(),
+            ArticlesNewFormImages(),
             ArticlesNewFormSubmit(),
           ],
         ),
@@ -58,7 +60,7 @@ class ArticlesNewFormSubmit extends ConsumerWidget {
         print("【START】post_articles");
         print(newArticlesState);
         dynamic result =
-            await controller.postArticle(newArticlesState.toJson());
+            await controller.postArticle(newArticlesState);
         await print("response>>>${result}");
         await print("【END】post_articles");
 
