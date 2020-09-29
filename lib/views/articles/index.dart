@@ -9,6 +9,8 @@ import 'widgets/articles_index_article.dart';
 
 import 'package:blog_app/views/users/registrations/new.dart';
 
+import 'package:blog_app/models/controllers/index_article_list.dart';
+
 class ArticlesIndex extends StatelessWidget {
   final Map params;
   ArticlesIndex(this.params);
@@ -43,7 +45,11 @@ class ArticlesIndex extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           // 投稿画面に遷移
-          await Navigator.of(context).pushNamed(articlesNewRoute);
+          // await Navigator.of(context).pushNamed(articlesNewRoute);
+          dynamic hoge = IndexArticleList();
+          print("【START】get_articles");
+          hoge.getArticles();
+          print("【END】get_articles");
         },
         tooltip: 'ホバーすると出る文字',
         child: Icon(Icons.add),
