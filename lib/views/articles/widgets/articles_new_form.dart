@@ -46,16 +46,25 @@ class ArticlesNewForm extends ConsumerWidget {
   // /submit
 }
 
-class ArticlesNewFormSubmit extends StatelessWidget {
+class ArticlesNewFormSubmit extends ConsumerWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ScopedReader watch) {
+    final newArticlesController = watch(articlesNewProvider);
+    final newArticlesState = watch(articlesNewProvider.state);
+
     return RaisedButton(
-      onPressed: () {
+      onPressed: () async {
         dynamic controller = ArticlesNewController();
         print("【START】post_articles");
-        Map newArticle = {"title": "hoge"};
-        controller.postArticle();
-        print("【END】post_articles");
+        print(newArticlesState);
+        dynamic result =
+            await controller.postArticle(newArticlesState.toJson());
+        await print("response>>>${result}");
+        await print("【END】post_articles");
+
+        if (result != "error occured") {
+          await Navigator.of(context).pop();
+        }
       },
       child: Text('保存'),
     );

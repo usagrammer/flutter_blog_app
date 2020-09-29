@@ -12,39 +12,43 @@ final articlesNewProvider =
 class ArticlesNewController extends StateNotifier<ArticleState> {
   ArticlesNewController() : super(ArticleState()) {}
 
-  String changedTitle(value) {
+  void changedTitle(value) {
     print('＜＜ChangedTitle...＞＞');
     state = state.copyWith(title: value);
-    return state.title;
   }
 
-  void postArticle() async {
+  void changedContent(value) {
+    print('＜＜ChangedContent...＞＞');
+    state = state.copyWith(content: value);
+  }
+
+  Future postArticle(newPost) async {
     final url = "https://flutter-blog-api-rabbit.herokuapp.com/articles";
     final dio = new Dio();
 
-    var payload = {
-      "article": {
-        "title": "タイトル",
-        "content": "内容",
-        "category_id": "1",
-      }
+    var sendData = {
+      "article": newPost,
     };
-    var data = await dio
+
+    var result = await dio
         .post(
       url,
-      data: new FormData.fromMap(payload),
+      data: new FormData.fromMap(sendData),
       options: Options(
         headers: {
-          "Authorization": " Bearer fugahoge",
+          "Authorization": " Bearer hoge",
         },
       ),
     )
         .then((response) {
-      return response.data;
+      print("response_controller >>> ${response}");
+      return "succeed";
     }).catchError((err) {
       print(err);
       print(err.message);
-      return null;
+      return "error occured";
     });
+
+    return result;
   }
 }
