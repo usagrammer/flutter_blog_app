@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'index.dart';
 
-import 'widgets/article_new_form.dart';
+import 'widgets/articles_new_form.dart';
 
 class ArticlesNew extends StatelessWidget {
   final Map params;

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'routes/constants.dart';
 import 'routes/router.dart';
 import 'routes/users.dart';
@@ -10,7 +12,11 @@ import 'views/articles/new.dart';
 import 'package:blog_app/views/users/registrations/new.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

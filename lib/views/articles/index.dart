@@ -45,11 +45,11 @@ class ArticlesIndex extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           // 投稿画面に遷移
-          // await Navigator.of(context).pushNamed(articlesNewRoute);
-          dynamic hoge = IndexArticleList();
-          print("【START】get_articles");
-          hoge.getArticles();
-          print("【END】get_articles");
+          await Navigator.of(context).pushNamed(articlesNewRoute);
+          // dynamic hoge = IndexArticleList();
+          // print("【START】get_articles");
+          // hoge.getArticles();
+          // print("【END】get_articles");
         },
         tooltip: 'ホバーすると出る文字',
         child: Icon(Icons.add),

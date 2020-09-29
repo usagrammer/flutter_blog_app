@@ -17,14 +17,14 @@ class _$ArticleStateTearOff {
 
 // ignore: unused_element
   _ArticleState call(
-      {@required int id,
-      @required String title,
-      @required String content,
-      @required int category_id,
-      @required int release_range,
-      @required String release_date,
-      @required String created_at,
-      @required String update_at}) {
+      {int id = 1,
+      String title = 'ほげほげたいとる',
+      String content = '',
+      int category_id = 1,
+      int release_range = 0,
+      String release_date = '',
+      String created_at = '',
+      String update_at = ''}) {
     return _ArticleState(
       id: id,
       title: title,
@@ -166,14 +166,14 @@ class __$ArticleStateCopyWithImpl<$Res> extends _$ArticleStateCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ArticleState with DiagnosticableTreeMixin implements _ArticleState {
   _$_ArticleState(
-      {@required this.id,
-      @required this.title,
-      @required this.content,
-      @required this.category_id,
-      @required this.release_range,
-      @required this.release_date,
-      @required this.created_at,
-      @required this.update_at})
+      {this.id = 1,
+      this.title = 'ほげほげたいとる',
+      this.content = '',
+      this.category_id = 1,
+      this.release_range = 0,
+      this.release_date = '',
+      this.created_at = '',
+      this.update_at = ''})
       : assert(id != null),
         assert(title != null),
         assert(content != null),
@@ -186,20 +186,28 @@ class _$_ArticleState with DiagnosticableTreeMixin implements _ArticleState {
   factory _$_ArticleState.fromJson(Map<String, dynamic> json) =>
       _$_$_ArticleStateFromJson(json);
 
+  @JsonKey(defaultValue: 1)
   @override
   final int id;
+  @JsonKey(defaultValue: 'ほげほげたいとる')
   @override
   final String title;
+  @JsonKey(defaultValue: '')
   @override
   final String content;
+  @JsonKey(defaultValue: 1)
   @override
   final int category_id;
+  @JsonKey(defaultValue: 0)
   @override
   final int release_range;
+  @JsonKey(defaultValue: '')
   @override
   final String release_date;
+  @JsonKey(defaultValue: '')
   @override
   final String created_at;
+  @JsonKey(defaultValue: '')
   @override
   final String update_at;
 
@@ -275,14 +283,14 @@ class _$_ArticleState with DiagnosticableTreeMixin implements _ArticleState {
 
 abstract class _ArticleState implements ArticleState {
   factory _ArticleState(
-      {@required int id,
-      @required String title,
-      @required String content,
-      @required int category_id,
-      @required int release_range,
-      @required String release_date,
-      @required String created_at,
-      @required String update_at}) = _$_ArticleState;
+      {int id,
+      String title,
+      String content,
+      int category_id,
+      int release_range,
+      String release_date,
+      String created_at,
+      String update_at}) = _$_ArticleState;
 
   factory _ArticleState.fromJson(Map<String, dynamic> json) =
       _$_ArticleState.fromJson;
