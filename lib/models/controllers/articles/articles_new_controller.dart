@@ -6,7 +6,7 @@ import 'package:state_notifier/state_notifier.dart';
 import 'package:blog_app/models/state/article_state.dart';
 
 final articlesNewProvider =
-    StateNotifierProvider((ref) => ArticlesNewController());
+    StateNotifierProvider.autoDispose((ref) => ArticlesNewController());
 
 // class IndexArticleList extends StateNotifier<ArticleListState> {
 class ArticlesNewController extends StateNotifier<ArticleState> {
