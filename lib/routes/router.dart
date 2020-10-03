@@ -12,7 +12,7 @@ import 'package:blog_app/views/comments/show.dart';
 
 import 'package:blog_app/views/users/registrations/new.dart';
 
-class Router {
+class ManageRoute {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     var path = settings.name;
     var params = {};
